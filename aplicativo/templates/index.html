@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+
+<body>
+  <main class="main">
+    <h1>Estos son los registros de la base de datos:</h1>
+    <ul>
+      {% for persona in personas %}
+      <li>Persona: {{persona.nombre_persona}}. Mascota: {{persona.mascota.nombre_mascota}}. Tipo: {{persona.mascota.tipo_mascota}}</li>
+      {% endfor %}
+    </ul>
+  </main>
+</body>
+
+</html>
